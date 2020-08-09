@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="heading" class="box">
+        <h1>It's <%= kindOfDay %></h1>
+    </div>
+
+    <div class="box">
+        <% for (let i = 0; i<todo.length; i++) { %>
+        <div class="item">
+            <input type="checkbox">
+            <p><%= todo[i] %></p>
+        </div>
+        <% } %>
+        <form class="item" action="/" method="post">
+            <input class="focus" type="text" name="todo" placeholder="Add to do" autocomplete="off">
+            <button type="submit">+</button>
+        </form>
+    </div>
+    
+    
+</body>
+</html>
