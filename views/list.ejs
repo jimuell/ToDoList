@@ -4,14 +4,17 @@
     </div>
 
     <div class="box">
-        <% for (let i = 0; i<todo.length; i++) { %>
-        <div class="item">
-            <input type="checkbox">
-            <p><%= todo[i] %></p>
-        </div>
-        <% } %>
+        <% todo.forEach(function(todoItem) { %>
+            <form action="/delete" method="post">
+                <div class="item">
+                    <input type="checkbox" name="delete" value="<%= todoItem._id %>" onchange="this.form.submit()">
+                    <p><%= todoItem.name %></p>
+                </div>
+            </form>
+        <% }); %>
+
         <form class="item" action="/" method="post">
-            <input class="focus" type="text" name="todo" placeholder="Add to do" autocomplete="off">
+            <input class="focus" type="text" name="todo" placeholder="Add to do" autocomplete="off" required>
             <button type="submit" name="list" value=<%= listTitle %>>+</button>
         </form>
     </div>
