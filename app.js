@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const app = express();
 const _ = require("lodash");
 
-mongoose.connect("mongodb://localhost:27017/todolistDB", {useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://admin-jimuel:madrigal56@cluster0.hdjvt.mongodb.net/todolistDB", {useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.set('useFindAndModify', false);
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
